@@ -162,7 +162,7 @@
         <h1 id="titelwijcontacteer1">Wij nemen contact op <span id="titelwijcontacteer2">met u!</span></h1>
         <div>
           <img src="./img//Kaart.png" alt="kaart met locatie" />
-          <form id="contactForm" action="./php/contactform.php" method="post">
+          <form name="contact" id="contactForm" method="POST" data-netlify="true">
             <input type="text" name="naam" placeholder="Naam" id="naam" />
             <input
               type="email"
@@ -181,7 +181,7 @@
               rows="4"
               placeholder="Plaats hier uw bericht"
             ></textarea>
-            <input type="button" value="Verzenden" onclick="bedanktContact()" />
+            <input type="submit" value="Verzenden" onclick="bedanktContact()" />
           </form>
 
           <div id="bedankt">
