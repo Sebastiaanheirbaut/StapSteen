@@ -1,0 +1,1212 @@
+@import "./vrijwiligers.css";
+/* Kleuren:
+ geel: #facb18
+ paars: #cc66cc 
+ blauw: #1499d1
+ groen: #51b958
+*/
+
+/* -------------------------------- MAIN COMPONENTS ------------------------------------------*/
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+main section {
+  height: 90vh;
+  padding: 0 15%;
+}
+
+.subpage section {
+  font-family: "Roboto", sans-serif;
+  height: 80vh;
+}
+
+.subpage h1 {
+  color: #1499d1;
+  font-weight: 800;
+}
+
+.subpage span {
+  color: #51b958;
+}
+
+.subpage p {
+  font-weight: 400;
+}
+
+.subpage button {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+/* -------------------------------- END OF MAIN COMPONENTS ------------------------------------------*/
+
+
+
+
+
+
+
+/* -------------------------------- HEADER ------------------------------------------*/
+#home {
+  background-image: url("../img/illustraties/hero-illustration4.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 10% 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  height: 100vh !important;
+
+}
+
+header nav {
+  width: 100%;
+  left: 0;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #ffffff;
+}
+
+header nav img.head_logo_homepage {
+  width: 6.5%;
+  margin-top: 30px;
+  justify-self: flex-end;
+}
+
+.head_logo {
+  width: 15%;
+  margin-top: 12px;
+  margin-right: 77.5%;
+}
+
+.frans_vlag {
+  margin-right: 20px;
+}
+
+.vlag img {
+  width: 1em;
+  /* margin-bottom: 5px; */
+
+}
+
+/* .vlag_engels {
+  margin-right: 10px;
+} */
+
+.topnav {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+header a {
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: #000;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+  font-weight: 400;
+
+  display: block;
+}
+
+header a:nth-child(2n) {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+header a:last-child {
+  margin-right: 0;
+}
+
+/* Credits naar Ian Lunn, Author URL: http://ianlunn.co.uk/, Bron URL: https://github.com/IanLunn/Hover/blob/master/css/hover.css*/
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+[href="#home"]:before {
+  background: #0098d7;
+}
+
+[href="./index.html#home"]:before {
+  background: #0098d7;
+}
+
+[href="../index.html#home"]:before {
+  background: #0098d7;
+}
+
+[href="#wie"]:before {
+  background: #facb18;
+}
+
+[href="./index.html#wie"]:before {
+  background: #facb18;
+}
+
+[href="../index.html#wie"]:before {
+  background: #facb18;
+}
+
+[href="#wat"]:before {
+  background: #51b958;
+}
+
+[href="./index.html#wat"]:before {
+  background: #51b958;
+}
+
+[href="../index.html#wat"]:before {
+  background: #51b958;
+}
+
+[href="./vrijwiligers.html#signup"]:before {
+  background: #cc66cc;
+}
+
+[href="./pages/vrijwiligers.html#signup"]:before {
+  background: #cc66cc;
+}
+
+
+[href="#contact"]:before {
+  background: #0098d7;
+}
+
+[href="./index.html#contact"]:before {
+  background: #0098d7;
+}
+
+[href="../index.html#contact"]:before {
+  background: #0098d7;
+}
+
+[href="./index.html#gift"]:before {
+  background: #51b958;
+}
+
+[href="../index.html#gift"]:before {
+  background: #51b958;
+}
+
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+.icon {
+  display: none;
+}
+
+
+#home .img_mobile {
+  display: none;
+}
+
+#home div {
+  width: 30%;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+#home h1 {
+  margin-top: 0;
+}
+
+#home span {
+  font-weight: 800;
+}
+
+#home span#stapspan {
+  color: #1499d1;
+}
+
+#home span#steenspan {
+  color: #51b958;
+}
+
+#home p {
+  font-size: 1.5em;
+  margin: 1.5rem 0;
+  font-weight: 300;
+}
+
+#home a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 300;
+  background-color: #1499d1;
+  margin-top: 1rem;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  padding: 0 15%;
+  /* height: 80px; */
+
+  background-color: rgb(255, 255, 255);
+}
+
+/* -------------------------------- END OF HEADER ------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- SECTION WHO ARE WE ------------------------------------------*/
+#wie {
+  background-image: url("../img/illustraties/Vraagtekens.svg");
+  background-repeat: no-repeat;
+  background-position: 75% center;
+  background-size: 450px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#wie div {
+  width: 65%;
+}
+
+#wie h1 {
+  color: #1499d1;
+  font-weight: 800;
+}
+
+#wie h1 span {
+  color: #51b958;
+}
+
+#wie p {
+  display: inline-block;
+  font-size: 1em;
+  width: 65%;
+  margin-right: 30%;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+#wie a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 300;
+  background-color: #facb18;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+
+
+
+/* ----- SUBPAGE TEAM -----*/
+
+.team img {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  padding-top: 20px;
+}
+
+.team {
+  background: #facb18;
+  height: 480px;
+  border-radius: 15px;
+  margin-top: 100px;
+}
+
+.team p,
+.team a {
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.team p:nth-child(2) {
+  font-weight: 700;
+}
+
+.team a {
+  display: block;
+  text-decoration: none;
+}
+
+.subpage section {
+  height: 800px;
+}
+
+/* ----- END OF STYLE SUBPAGE TEAM -----*/
+
+
+/* -------------------------------- END OF SECTION WHO ARE WE ------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- SECTION WHAT DO WE DO ------------------------------------------*/
+#wat {
+  background-image: url("../img/illustraties/bg-wat-doen-we2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+#wat>div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#wat div.wat_div {
+  box-sizing: border-box;
+  width: 30%;
+  height: auto;
+  background-color: white;
+  padding: 50px 0 34px;
+  border: 5px #51b958 solid;
+  border-radius: 50px;
+}
+
+#wat h1 {
+  width: 100%;
+  margin-bottom: 2rem;
+  color: #1499d1;
+  font-weight: 800;
+}
+
+#wat h1 span {
+  color: #51b958;
+}
+
+#wat a {
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1em 0;
+  text-decoration: none;
+  color: #51b958;
+  text-transform: uppercase;
+  /* background-color: white; */
+  border-radius: 15px;
+  font-size: 24px;
+}
+
+#wat img {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----- STYLE SUBPAGE -----*/
+
+.subpage {
+  /* margin: 20vh 10% 0; */
+  /* padding-bottom: 200px; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* width: 100%; */
+}
+
+.subpage img {
+  width: 40%;
+
+}
+
+.subpage button {
+  background-color: #cc66cc;
+  color: #ffffff;
+  border: none;
+  padding: 10px 80px;
+  align-self: flex-end;
+  border-radius: 15px;
+  text-decoration: none;
+  /* height: 50px; */
+  bottom: 0;
+  width: 100%;
+}
+
+.text_subpage {
+  z-index: -3;
+  max-width: 50%;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.subpage button p {
+  margin-bottom: -1px;
+}
+
+@media (max-width: 990px) {
+  .text_subpage {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  .subpage img {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px;
+    width: 70%;
+  }
+
+  .subpage {
+    height: 900px;
+  }
+}
+
+@media (max-width: 1184px) {
+  .subpage img {
+    margin-top: 150px;
+  }
+}
+
+/* ----- STYLE SUBPAGE -----*/
+
+/* -------------------------------- END OD SECTION WHAT DO WE DO ------------------------------------------*/
+
+
+
+
+
+
+
+
+/* -------------------------------- CONTACT PAGE ------------------------------------------*/
+
+#contact {
+  background-image: url("../img/illustraties/contact-form2.svg");
+  background-repeat: no-repeat;
+  background-size: 80% auto;
+  background-position: center 70%;
+}
+
+#contact h1 {
+  padding-top: 18vw;
+  color: #0098d7;
+  font-weight: 800;
+}
+
+#contact h1 span {
+  color: #51b958;
+}
+
+#contact div {
+  margin: 1em 0;
+}
+
+#contact div p {
+  margin: 0;
+}
+
+#contact-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#contact-2 h1 {
+  width: 100%;
+  padding-top: 11vh;
+  padding-bottom: 1vh;
+  margin-bottom: 0;
+  color: #0098d7;
+  font-weight: 800;
+}
+
+#contact-2 h1 span {
+  color: #51b958;
+}
+
+#contact-2 div {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+
+  box-shadow: 4px 6px 12px 0px;
+}
+
+#contact-2 img,
+#contact-2 form,
+#contact-2 #bedankt {
+  /* height: 60vh; */
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#contact-2 #bedankt {
+  display: none;
+}
+
+#contact-2 #bedankt.show {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 2em 3em;
+
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+#contact-2 #bedankt.show p {
+  color: #0098d7;
+}
+
+#contact-2 #bedankt.show p~p {
+  margin-top: 0;
+}
+
+#contact-2 form {
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 2em 3em;
+}
+
+#contact-2 form.hidden {
+  display: none;
+}
+
+#contact-2 form input,
+#contact-2 form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px #0098d7 solid;
+}
+
+#contact-2 form input {
+  height: 2em;
+}
+
+#contact-2 form input::placeholder,
+#contact-2 form textarea::placeholder {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: #0098d7;
+  font-family: "Roboto", sans-serif;
+  font-weight: thin;
+  align-self: center;
+}
+
+#contact-2 form input[type="button"] {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  width: unset;
+  border: none;
+  background-color: #0098d7;
+  align-self: flex-start;
+}
+
+/* -------------------------------- END OF CONTACT PAGE ------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- GIFTS SECTION ------------------------------------------*/
+
+section#gift {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+#gift h1 {
+  width: 100%;
+  padding-top: 11vh;
+  padding-bottom: 1vh;
+  margin-bottom: 0;
+  color: #0098d7;
+  font-weight: 800;
+}
+
+#gift h1 span {
+  color: #51b958;
+}
+
+#gift img {
+  width: 45%;
+}
+
+#gift form {
+  box-sizing: border-box;
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 2em 3em;
+
+  border: 5px #0098d7 solid;
+  border-radius: 50px;
+}
+
+#gift form input {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px #0098d7 solid;
+}
+
+#gift form h2 {
+  text-transform: uppercase;
+}
+
+#gift form p~p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#gift form input[type="submit"] {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  width: unset;
+  border: none;
+  background-color: #0098d7;
+  align-self: flex-start;
+}
+
+/* -------------------------------- END OF GIFTS SECTION ------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- FOOTER ------------------------------------------*/
+
+footer {
+  height: 20vh;
+
+  background-image: url("../img/illustraties/Footer.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 990px) {
+  footer {
+    position: relative;
+  }
+
+  #home {
+    background-position: 10% 60%;
+  }
+}
+
+#homepage footer {
+  height: 100vh;
+  z-index: -1;
+  background-image: url("../img/illustraties/cloud-1.png"),
+    url("../img/illustraties/cloud-2.svg"),
+    url("../img/illustraties/cloud-2.svg"),
+    url("../img/illustraties/cloud-3.svg"),
+    url("../img/illustraties/cloud_cropped.svg"),
+    url("../img/illustraties/Footer.svg");
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-size: 40%, 10%, 15%, 25%, 15%, 100%;
+  background-position: center 58%, 25% 45%, 85% 45%, 5% 5%, 65% 25%,
+    bottom center;
+  justify-content: flex-end;
+
+  position: relative;
+}
+
+footer p {
+  font-weight: 300;
+  margin: 0;
+}
+
+#homepage footer p {
+  font-weight: 300;
+}
+
+@media (max-width: 770px) {
+  #homepage footer {
+    height: 6vh;
+    background-image: url("../img/illustraties/Footer.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom center;
+  }
+
+  #homepage footer p {
+    font-size: 0.5em;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  footer {
+    position: relative;
+  }
+}
+
+/* -------------------------------- END OF FOOTER ------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- RESPONISVE DESIGN ------------------------------------------*/
+
+@media (max-width: 1400px) {
+  main section {
+    padding: 0 10%;
+  }
+
+  #home {
+    background-position: 10% 70%;
+  }
+}
+
+@media (max-width: 865px) {
+  header {
+    justify-content: flex-end;
+  }
+
+  .topnav {
+    justify-content: flex-start;
+    flex-direction: column;
+
+  }
+
+  .vlag img {
+    display: inline-block;
+    margin: 0;
+    flex: unset;
+  }
+
+  header nav {
+    padding: 0;
+  }
+
+  .topnav img {
+    display: none;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  .topnav a {
+    display: none;
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+
+  }
+
+  .topnav a i {
+    text-align: right;
+    margin-top: 15px;
+    width: 90%;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+    /* margin-top: 20px; */
+  }
+
+  .topnav.responsive {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a,
+  .topnav.responsive img {
+    /* float: none; */
+    display: block;
+    /* text-align: right; */
+  }
+
+  .topnav.responsive a:not(:last-child) {
+    font-size: 2.5vw;
+    margin-top: 15px;
+    padding-bottom: 0;
+    align-self: flex-end;
+  }
+
+  .hvr-underline-from-center:before {
+    content: none;
+  }
+
+  .subpage img {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 1400px) {
+  header {
+    padding: 0 10%;
+  }
+
+  header nav {
+    width: 100%;
+    left: 0;
+  }
+
+  .vlag img {
+    width: 0.7em;
+  }
+}
+
+@media (max-width: 1130px) {
+  header a {
+    font-size: 1.5vw;
+  }
+
+  header a:nth-child(2n):not(:last-child) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  /* .topnav {
+    justify-content: center;
+  } */
+
+}
+
+
+
+
+
+@media (max-width: 1151px) {
+  #wie {
+    background-position: 85% center;
+    background-size: 300px;
+  }
+
+  #home div {
+    width: 40%;
+  }
+}
+
+@media (max-width: 990px) {
+  #home div {
+    width: 40%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 765px) {
+  #homepage section {
+    height: unset;
+  }
+
+  #home {
+    background-image: unset;
+  }
+
+  #home div {
+    width: 100%;
+  }
+
+  #home a {
+    font-size: 1em;
+  }
+
+  #home .img_mobile {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-top: -150px;
+  }
+
+  #wie {
+    background-image: unset;
+  }
+
+  #wie div {
+    width: 100%;
+  }
+
+  #wie p {
+    width: 100%;
+    margin-right: unset;
+  }
+
+  #wie h1 {
+    padding-top: 10vh;
+  }
+
+  #wie a {
+    font-size: 1em;
+  }
+
+  #wat {
+    background-image: unset;
+  }
+
+  #wat>div {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #wat div.wat_div {
+    width: 100%;
+    max-width: 300px;
+    padding: 0 5%;
+    margin: 5px 0;
+  }
+
+  #wat img {
+    margin-top: 10px;
+    height: 100px;
+  }
+
+  #wat h1 {
+    padding-top: 10vh;
+  }
+
+  #contact {
+    background-image: unset;
+  }
+
+  #contact h1 {
+    padding-top: 10vh;
+  }
+
+  #contact-2 img {
+    display: none;
+  }
+
+  #contact-2 form,
+  #contact-2 #bedankt {
+    width: 100%;
+    padding: 1em 1.5em;
+  }
+
+  #contact-2 form input {
+    margin: 20px 0;
+  }
+
+  #contact-2 form input[type="submit"] {
+    margin-top: 10px;
+    font-size: 1em;
+  }
+
+  #contact-2 h1 {
+    padding-top: 10vh;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    font-size: 1.9em;
+  }
+
+  #gift img {
+    display: none;
+  }
+
+  #gift form {
+    width: 100%;
+    padding: 1em 1.5em;
+  }
+
+  #gift h1 {
+    padding-top: 10vh;
+    padding-bottom: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.8em;
+  }
+
+  #gift form input[type="submit"] {
+    font-size: 1em;
+    width: 100%;
+  }
+
+  #gift form h2 {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 990px) {
+  .team {
+    margin-top: 50px;
+  }
+
+  .team img {
+    width: 40%;
+  }
+
+  .footer_team {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 770px) {
+  .team {
+    height: 550px;
+  }
+
+  .footer_team {
+    margin-top: 1070px;
+  }
+}
+
+@media (max-width: 770px) {
+  .team {
+    height: 450px;
+  }
+}
+
+
+/* -------------------------------- END OF RESPONISVE DESIGN ------------------------------------------*/
