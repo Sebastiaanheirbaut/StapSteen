@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>StapSteen: the game</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./game.css" />
+  </head>
+
+  <body>
+    <section class="button">
+      <a href="../pages/vrijwiligers.html#signup">Website StapSteen</a>
+    </section>
+    <section class="error">
+      <p>Speel dit spel op een groter scherm!</p>
+      <p>Jouez ce jeu sur un plus grand écran!</p>
+      <p>Play this game on a bigger screen!</p>
+    </section>
+    <script type="text/javascript">
+      var config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        physics: {
+          default: "arcade",
+          arcade: {
+            gravity: {
+              y: 250
+            },
+            debug: false
+          }
+        },
+        scene: {
+          preload: preload,
+          create: create,
+          update: update
+        }
+      };
+
+      var player;
+      var ingredients;
+      var platform;
+      var cursors;
+      var gameOver = false;
+      var time = 0;
+
+      var ingredientName;
+      var ingredientSpeed = 250;
+      var recipeHearts;
+      var recipeIcons;
+
+      var amountHearts = 0;
+      var amountHands = 0;
+      var amountText = 0;
+      var amountChess = 1;
+
+      var game = new Phaser.Game(config);
+
+      function preload() {
+        this.load.image("background", "assets/background.png");
+        this.load.image("ground", "assets/recipe.png");
+
+        this.load.image("mand", "assets/mand.png");
+
+        this.load.image("heart", "assets/heart.png");
+        this.load.image("hands", "assets/hands.png");
+        this.load.image("text", "assets/text.png");
+        this.load.image("chess", "assets/chess.png");
+      }
+
+      function create() {
+        this.add.image(400, 300, "background");
+
+        platform = this.physics.add.staticGroup();
+        platform.create(400, 551.5, "ground");
+
+        player = this.physics.add.sprite(100, 450, "mand");
+        player.setCollideWorldBounds(true);
+
+        cursors = this.input.keyboard.createCursorKeys();
+
+        ingredients = this.physics.add.group();
+
+        this.physics.add.collider(player, platform);
+
+        this.physics.add.overlap(
+          player,
+          ingredients,
+          collectIngredient,
+          null,
+          this
+        );
+
+        recipeIcons = this.physics.add.staticGroup();
+        recipeIcons.create(50, 550, "heart");
+        recipeIcons.create(200, 550, "hands");
+        recipeIcons.create(350, 550, "text");
+        recipeIcons.create(500, 550, "chess");
+
+        createRecipe();
+
+        recipeHearts = this.add.text(75, 532, "x" + amountHearts.toString(), {
+          fontSize: "32px",
+          fill: "#000",
+          fontFamily: "Roboto"
+        });
+
+        recipeHands = this.add.text(225, 532, "x" + amountHands.toString(), {
+          fontSize: "32px",
+          fill: "#000",
+          fontFamily: "Roboto"
+        });
+
+        recipeText = this.add.text(375, 532, "x" + amountText.toString(), {
+          fontSize: "32px",
+          fill: "#000",
+          fontFamily: "Roboto"
+        });
+
+        recipeChess = this.add.text(525, 532, "x" + amountChess.toString(), {
+          fontSize: "32px",
+          fill: "#000",
+          fontFamily: "Roboto"
+        });
+      }
+
+      function update() {
+        if (gameOver) {
+          return;
+        }
+
+        if (cursors.left.isDown) {
+          player.setVelocityX(-160);
+        } else if (cursors.right.isDown) {
+          player.setVelocityX(160);
+        } else {
+          player.setVelocityX(0);
+        }
+
+        if (
+          amountHearts == 0 &&
+          amountHands == 0 &&
+          amountText == 0 &&
+          amountChess == 0
+        ) {
+          gameWon();
+        }
+
+        if (time % 60 == 0) {
+          dropIngredient();
+        }
+        time++;
+      }
+
+      function createRecipe() {
+        amountHearts = Phaser.Math.Between(2, 4);
+        amountHands = Phaser.Math.Between(2, 4);
+        amountText = Phaser.Math.Between(2, 4);
+        amountChess = Phaser.Math.Between(2, 4);
+      }
+
+      function collectIngredient(player, ingredient) {
+        ingredient.disableBody(true, true);
+        if (ingredient.texture.key == "heart") {
+          if (amountHearts == 0) {
+            return;
+          }
+
+          amountHearts--;
+          recipeHearts.setText("x" + amountHearts);
+        } else if (ingredient.texture.key == "hands") {
+          if (amountHands == 0) {
+            return;
+          }
+
+          amountHands--;
+          recipeHands.setText("x" + amountHands);
+        } else if (ingredient.texture.key == "text") {
+          if (amountText == 0) {
+            return;
+          }
+
+          amountText--;
+          recipeText.setText("x" + amountText);
+        } else if (ingredient.texture.key == "chess") {
+          if (amountChess == 0) {
+            return;
+          }
+
+          amountChess--;
+          recipeChess.setText("x" + amountChess);
+        }
+      }
+
+      function dropIngredient() {
+        var xIngredient = Phaser.Math.Between(25, 775);
+        var asset = Phaser.Math.Between(0, 3);
+
+        if (asset == 0) {
+          ingredientName = "chess";
+        } else if (asset == 1) {
+          ingredientName = "heart";
+        } else if (asset == 2) {
+          ingredientName = "text";
+        } else if (asset == 3) {
+          ingredientName = "hands";
+        }
+        var ingredient = ingredients.create(xIngredient, 0, ingredientName);
+        ingredient.setVelocityY(ingredientSpeed);
+        ingredient.body.allowGravity = false;
+      }
+
+      function gameWon() {
+        console.log("Gewonnen!");
+        gameOver = true;
+
+        window.setTimeout(function () {
+          window.location.assign("../pages/vrijwiligers.html#signup");
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
